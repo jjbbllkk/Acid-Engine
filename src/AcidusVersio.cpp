@@ -136,7 +136,10 @@ struct AcidusVersio : Module {
 		float decay = clamp(params[DECAY_PARAM].getValue() + inputs[DECAY_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
 		float envmod = clamp(params[ENVMOD_PARAM].getValue() + inputs[ENVMOD_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
 		float slide = clamp(params[SLIDE_PARAM].getValue() + inputs[SLIDE_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
-		float accent = clamp(params[ACCENT_PARAM].getValue() + inputs[ACCENT_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
+
+		// Accent: knob controls intensity, CV acts as gate trigger
+		float accentAmount = params[ACCENT_PARAM].getValue();
+		bool accentTriggered = inputs[ACCENT_INPUT].getVoltage() > 2.5f;
 
 		// Waveform switch (0=Saw, 1=Blend, 2=Square)
 		int waveform = (int)params[WAVEFORM_PARAM].getValue();
@@ -154,7 +157,7 @@ struct AcidusVersio : Module {
 		// Accent decay is ~20% of normal decay (authentic 303 behavior: shorter, punchier)
 		tb303.setAccentDecay(decayMs * 0.2f);
 		tb303.setEnvMod(envmod * envmodMax);
-		tb303.setAccent(accent * accentMax);
+		tb303.setAccent(accentAmount * accentMax);
 
 		// Handle Gate & Note (trigger input OR button)
 		bool buttonPressed = params[TRIG_BUTTON_PARAM].getValue() > 0.5f;
@@ -171,8 +174,8 @@ struct AcidusVersio : Module {
 				tb303.setSlideTime(60.0f);
 			}
 
-			int velocity = 100;
-			if (accent > 0.5f) velocity = 127;
+			// Velocity < 100 = no accent, >= 100 = accent triggered
+			int velocity = accentTriggered ? 127 : 80;
 
 			active_note = midi_note;
 
