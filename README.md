@@ -72,6 +72,6 @@ The accent works like a real 303:
 
 ## License
 
-GPL-3.0-or-later
+MIT License - do whatever you want with this code.
 
-The Open303 code is part of the rosic library by Robin Schmidt.
+The Open303 DSP engine is part of the rosic library by Robin Schmidt.
