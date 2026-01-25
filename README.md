@@ -66,12 +66,10 @@ The accent works like a real 303:
 
 ## Credits
 
-- **Original VCV Rack port**: [abluenautilus](https://github.com/abluenautilus)
-- **Open303 DSP engine**: [Robin Schmidt](http://www.rs-met.com/) (rosic library)
-- **This fork**: [Vulpes79](https://github.com/jjbbllkk)
+- **Open303 DSP engine**: [Robin Schmidt](http://www.rs-met.com/) (from the `rosic` library)
+- **Noise Engineering Versio Platform Port**: [abluenautilus](https://github.com/abluenautilus)
+- **VCV Rack Port**: [Vulpes79](https://github.com/jjbbllkk)
 
 ## License
 
-MIT License - do whatever you want with this code.
-
-The Open303 DSP engine is part of the rosic library by Robin Schmidt.
+MIT License
