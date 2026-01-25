@@ -1,0 +1,23 @@
+{
+  "slug": "AcidusVersio",
+  "name": "Acidus Versio",
+  "version": "2.0.0",
+  "license": "GPL-3.0-or-later",
+  "brand": "Vulpes79",
+  "author": "Vulpes79",
+  "authorEmail": "",
+  "authorUrl": "",
+  "pluginUrl": "",
+  "manualUrl": "",
+  "sourceUrl": "",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "AcidusVersio",
+      "name": "Acidus Versio",
+      "description": "Acid Synth Voice",
+      "tags": ["Synth", "Voice"]
+    }
+  ]
+}

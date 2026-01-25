@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="60.96mm" height="128.5mm" viewBox="0 0 60.96 128.5">
+  <!-- Background -->
+  <rect x="0" y="0" width="60.96" height="128.5" fill="#e6e6e6"/>
+
+  <!-- Title: ACIDUS VERSIO - centered at 30.48, ~26mm wide, starts at 17.5 -->
+  <g id="title" transform="translate(17.5, 4)">
+    <!-- A -->
+    <polygon points="0.8,0 1.6,2.8 1.2,2.8 0.8,1.5 0.4,2.8 0,2.8" fill="#222"/>
+    <rect x="0.25" y="1.8" width="1.1" height="0.35" fill="#222"/>
+    <!-- C -->
+    <rect x="2" y="0" width="1.4" height="0.4" fill="#222"/>
+    <rect x="2" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="2" y="2.4" width="1.4" height="0.4" fill="#222"/>
+    <!-- I -->
+    <rect x="3.8" y="0" width="0.4" height="2.8" fill="#222"/>
+    <!-- D -->
+    <rect x="4.6" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="4.6" y="0" width="1.2" height="0.4" fill="#222"/>
+    <rect x="4.6" y="2.4" width="1.2" height="0.4" fill="#222"/>
+    <rect x="5.5" y="0.3" width="0.4" height="2.3" fill="#222"/>
+    <!-- U -->
+    <rect x="6.4" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="7.6" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="6.4" y="2.4" width="1.6" height="0.4" fill="#222"/>
+    <!-- S -->
+    <rect x="8.4" y="0" width="1.4" height="0.4" fill="#222"/>
+    <rect x="8.4" y="0" width="0.4" height="1.4" fill="#222"/>
+    <rect x="8.4" y="1.2" width="1.4" height="0.4" fill="#222"/>
+    <rect x="9.4" y="1.2" width="0.4" height="1.4" fill="#222"/>
+    <rect x="8.4" y="2.4" width="1.4" height="0.4" fill="#222"/>
+    <!-- space -->
+    <!-- V -->
+    <polygon points="11,0 11.4,0 12.2,2.8 11.8,2.8" fill="#222"/>
+    <polygon points="13.4,0 13,0 12.2,2.8 12.6,2.8" fill="#222"/>
+    <!-- E -->
+    <rect x="13.8" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="13.8" y="0" width="1.4" height="0.4" fill="#222"/>
+    <rect x="13.8" y="1.2" width="1" height="0.35" fill="#222"/>
+    <rect x="13.8" y="2.4" width="1.4" height="0.4" fill="#222"/>
+    <!-- R -->
+    <rect x="15.6" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="15.6" y="0" width="1.2" height="0.4" fill="#222"/>
+    <rect x="16.5" y="0" width="0.4" height="1" fill="#222"/>
+    <rect x="15.6" y="1" width="1.2" height="0.35" fill="#222"/>
+    <polygon points="16,1.35 16.3,1.35 17.1,2.8 16.8,2.8" fill="#222"/>
+    <!-- S -->
+    <rect x="17.4" y="0" width="1.4" height="0.4" fill="#222"/>
+    <rect x="17.4" y="0" width="0.4" height="1.4" fill="#222"/>
+    <rect x="17.4" y="1.2" width="1.4" height="0.4" fill="#222"/>
+    <rect x="18.4" y="1.2" width="0.4" height="1.4" fill="#222"/>
+    <rect x="17.4" y="2.4" width="1.4" height="0.4" fill="#222"/>
+    <!-- I -->
+    <rect x="19.2" y="0" width="0.4" height="2.8" fill="#222"/>
+    <!-- O -->
+    <rect x="20" y="0" width="1.5" height="0.4" fill="#222"/>
+    <rect x="20" y="2.4" width="1.5" height="0.4" fill="#222"/>
+    <rect x="20" y="0" width="0.4" height="2.8" fill="#222"/>
+    <rect x="21.1" y="0" width="0.4" height="2.8" fill="#222"/>
+  </g>
+
+  <!-- VU meter section - centered at 30.48 -->
+  <rect x="18" y="9" width="24.96" height="5" fill="#333" rx="1"/>
+  <circle cx="24" cy="11.5" r="1.6" fill="#442200" stroke="#555" stroke-width="0.3"/>
+  <circle cx="30.48" cy="11.5" r="1.6" fill="#442200" stroke="#555" stroke-width="0.3"/>
+  <circle cx="36.96" cy="11.5" r="1.6" fill="#442200" stroke="#555" stroke-width="0.3"/>
+
+  <!-- TUNE label - centered at x=12, y=15 (knob at y=22, radius ~4mm) -->
+  <!-- Text width ~5mm, starts at 9.5 -->
+  <g id="tune" transform="translate(9.5, 15)">
+    <rect x="0" y="0" width="1.4" height="0.3" fill="#222"/>
+    <rect x="0.55" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.7" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="2.5" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.7" y="1.1" width="1.1" height="0.3" fill="#222"/>
+    <rect x="3.1" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <polygon points="3.1,0 3.4,0 4.3,1.4 4,1.4" fill="#222"/>
+    <rect x="4.6" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.6" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="4.6" y="0.55" width="0.7" height="0.25" fill="#222"/>
+    <rect x="4.6" y="1.1" width="1" height="0.3" fill="#222"/>
+  </g>
+
+  <!-- RES label - centered at x=48.96, y=15 -->
+  <!-- Text width ~4mm, starts at 47 -->
+  <g id="res" transform="translate(47, 15)">
+    <rect x="0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="0" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="0.7" y="0" width="0.3" height="0.5" fill="#222"/>
+    <rect x="0" y="0.5" width="1" height="0.25" fill="#222"/>
+    <polygon points="0.25,0.75 0.5,0.75 1.1,1.4 0.85,1.4" fill="#222"/>
+    <rect x="1.3" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.3" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="1.3" y="0.55" width="0.7" height="0.25" fill="#222"/>
+    <rect x="1.3" y="1.1" width="1" height="0.3" fill="#222"/>
+    <rect x="2.6" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="2.6" y="0" width="0.3" height="0.55" fill="#222"/>
+    <rect x="2.6" y="0.55" width="1" height="0.25" fill="#222"/>
+    <rect x="3.3" y="0.55" width="0.3" height="0.55" fill="#222"/>
+    <rect x="2.6" y="1.1" width="1" height="0.3" fill="#222"/>
+  </g>
+
+  <!-- CUTOFF label - centered at x=30.48, y=27 (large knob at y=35, radius ~5mm) -->
+  <!-- Text width ~8mm, starts at 26.5 -->
+  <g id="cutoff" transform="translate(26.5, 27)">
+    <rect x="0" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="0" y="1.1" width="1" height="0.3" fill="#222"/>
+    <rect x="1.3" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.9" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.3" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="2.4" y="0" width="1.2" height="0.3" fill="#222"/>
+    <rect x="2.85" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="3.9" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="3.9" y="1.1" width="1" height="0.3" fill="#222"/>
+    <rect x="3.9" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.6" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="5.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="5.2" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="5.2" y="0.55" width="0.7" height="0.25" fill="#222"/>
+    <rect x="6.5" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="6.5" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="6.5" y="0.55" width="0.7" height="0.25" fill="#222"/>
+  </g>
+
+  <!-- DECAY label - centered at x=15.24, y=43 (knob at y=50) -->
+  <!-- Text width ~7mm, starts at 11.7 -->
+  <g id="decay" transform="translate(11.7, 43)">
+    <rect x="0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="0" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="0" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="0.6" y="0.2" width="0.3" height="1.1" fill="#222"/>
+    <rect x="1.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.2" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="1.2" y="0.55" width="0.6" height="0.25" fill="#222"/>
+    <rect x="1.2" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="2.4" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="2.4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="2.4" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <polygon points="3.6,1.4 3.85,1.4 4.2,0 3.95,0" fill="#222"/>
+    <polygon points="4.8,1.4 4.55,1.4 4.2,0 4.45,0" fill="#222"/>
+    <rect x="3.75" y="0.9" width="0.9" height="0.25" fill="#222"/>
+    <polygon points="5.1,0 5.35,0 5.7,0.6 5.45,0.6" fill="#222"/>
+    <polygon points="6.3,0 6.05,0 5.7,0.6 5.95,0.6" fill="#222"/>
+    <rect x="5.55" y="0.6" width="0.3" height="0.8" fill="#222"/>
+  </g>
+
+  <!-- ENVMOD label - centered at x=45.72, y=43 -->
+  <!-- Text width ~8mm, starts at 41.7 -->
+  <g id="envmod" transform="translate(41.7, 43)">
+    <rect x="0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="0" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="0" y="0.55" width="0.6" height="0.25" fill="#222"/>
+    <rect x="0" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="1.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.8" y="0" width="0.3" height="1.4" fill="#222"/>
+    <polygon points="1.2,0 1.5,0 2.1,1.4 1.8,1.4" fill="#222"/>
+    <polygon points="2.4,0 2.65,0 3,1.4 2.75,1.4" fill="#222"/>
+    <polygon points="3.6,0 3.35,0 3,1.4 3.25,1.4" fill="#222"/>
+    <rect x="3.9" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.6" y="0" width="0.3" height="1.4" fill="#222"/>
+    <polygon points="3.9,0 4.2,0 4.7,0.8 4.4,0.8" fill="#222"/>
+    <polygon points="4.9,0 4.6,0 4.7,0.8 5,0.8" fill="#222"/>
+    <rect x="5.2" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="5.2" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="5.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="5.8" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="6.4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="6.4" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="6.4" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="7" y="0.2" width="0.3" height="1.1" fill="#222"/>
+  </g>
+
+  <!-- WAVE label - centered at x=12, y=57 (switch at y=64) -->
+  <!-- Text width ~6mm, starts at 9 -->
+  <g id="wave" transform="translate(9, 57)">
+    <rect x="0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1" y="0" width="0.3" height="1.4" fill="#222"/>
+    <polygon points="0,1.4 0.3,1.4 0.65,0.5 0.35,0.5" fill="#222"/>
+    <polygon points="1.3,1.4 1,1.4 0.65,0.5 0.95,0.5" fill="#222"/>
+    <rect x="0.5" y="0.5" width="0.3" height="0.9" fill="#222"/>
+    <polygon points="1.6,1.4 1.85,1.4 2.2,0 1.95,0" fill="#222"/>
+    <polygon points="2.8,1.4 2.55,1.4 2.2,0 2.45,0" fill="#222"/>
+    <rect x="1.75" y="0.9" width="0.9" height="0.25" fill="#222"/>
+    <polygon points="3.1,0 3.35,0 3.8,1.4 3.55,1.4" fill="#222"/>
+    <polygon points="4.5,0 4.25,0 3.8,1.4 4.05,1.4" fill="#222"/>
+    <rect x="4.8" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.8" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="4.8" y="0.55" width="0.6" height="0.25" fill="#222"/>
+    <rect x="4.8" y="1.1" width="0.9" height="0.3" fill="#222"/>
+  </g>
+
+  <!-- SLIDE label - centered at x=30.48, y=57 -->
+  <!-- Text width ~6mm, starts at 27.5 -->
+  <g id="slide" transform="translate(27.5, 57)">
+    <rect x="0" y="0" width="1" height="0.3" fill="#222"/>
+    <rect x="0" y="0" width="0.3" height="0.55" fill="#222"/>
+    <rect x="0" y="0.55" width="1" height="0.25" fill="#222"/>
+    <rect x="0.7" y="0.55" width="0.3" height="0.55" fill="#222"/>
+    <rect x="0" y="1.1" width="1" height="0.3" fill="#222"/>
+    <rect x="1.3" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.3" y="1.1" width="0.8" height="0.3" fill="#222"/>
+    <rect x="2.4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="3" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="3" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3.6" y="0.2" width="0.3" height="1.1" fill="#222"/>
+    <rect x="4.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.2" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="4.2" y="0.55" width="0.6" height="0.25" fill="#222"/>
+    <rect x="4.2" y="1.1" width="0.9" height="0.3" fill="#222"/>
+  </g>
+
+  <!-- MODE label - centered at x=12, y=71 (switch at y=78) -->
+  <!-- Text width ~6mm, starts at 9 -->
+  <g id="mode" transform="translate(9, 71)">
+    <rect x="0" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1" y="0" width="0.3" height="1.4" fill="#222"/>
+    <polygon points="0,0 0.3,0 0.65,0.9 0.35,0.9" fill="#222"/>
+    <polygon points="1.3,0 1,0 0.65,0.9 0.95,0.9" fill="#222"/>
+    <rect x="1.6" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="1.6" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="1.6" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="2.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="2.8" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="2.8" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="2.8" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3.4" y="0.2" width="0.3" height="1.1" fill="#222"/>
+    <rect x="4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="4" y="0.55" width="0.6" height="0.25" fill="#222"/>
+    <rect x="4" y="1.1" width="0.9" height="0.3" fill="#222"/>
+  </g>
+
+  <!-- ACCENT label - centered at x=30.48, y=71 -->
+  <!-- Text width ~8mm, starts at 26.5 -->
+  <g id="accent" transform="translate(26.5, 71)">
+    <polygon points="0.5,1.4 0.75,1.4 1.1,0 0.85,0" fill="#222"/>
+    <polygon points="1.7,1.4 1.45,1.4 1.1,0 1.35,0" fill="#222"/>
+    <rect x="0.65" y="0.9" width="0.9" height="0.25" fill="#222"/>
+    <rect x="2" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="2" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3.2" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="3.2" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="4.4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="4.4" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="4.4" y="0.55" width="0.6" height="0.25" fill="#222"/>
+    <rect x="4.4" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="5.6" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="6.2" y="0" width="0.3" height="1.4" fill="#222"/>
+    <polygon points="5.6,0 5.9,0 6.5,1.4 6.2,1.4" fill="#222"/>
+    <rect x="6.8" y="0" width="1.1" height="0.3" fill="#222"/>
+    <rect x="7.2" y="0" width="0.3" height="1.4" fill="#222"/>
+  </g>
+
+  <!-- TRIG label - centered at x=48.96, y=71 -->
+  <!-- Text width ~5mm, starts at 46.5 -->
+  <g id="trig" transform="translate(46.5, 71)">
+    <rect x="0" y="0" width="1.1" height="0.3" fill="#222"/>
+    <rect x="0.4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.4" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="1.4" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="2" y="0" width="0.3" height="0.5" fill="#222"/>
+    <rect x="1.4" y="0.5" width="0.9" height="0.25" fill="#222"/>
+    <polygon points="1.65,0.75 1.9,0.75 2.5,1.4 2.25,1.4" fill="#222"/>
+    <rect x="2.7" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="3.3" y="0" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3.3" y="0" width="0.3" height="1.4" fill="#222"/>
+    <rect x="3.3" y="1.1" width="0.9" height="0.3" fill="#222"/>
+    <rect x="3.9" y="0.6" width="0.3" height="0.8" fill="#222"/>
+    <rect x="3.65" y="0.6" width="0.55" height="0.25" fill="#222"/>
+  </g>
+
+  <!-- CV INPUT section - dark background -->
+  <rect x="0" y="86" width="60.96" height="23" fill="#222"/>
+
+  <!-- CV Row 1 labels (y=92 jacks): V/OCT, CUTOFF, RES, ACCENT - smaller text at y=88 -->
+  <!-- V/OCT centered at x=8, width ~4mm, starts at 6 -->
+  <g id="voct" transform="translate(5, 87.5)">
+    <polygon points="0,0 0.2,0 0.5,1 0.3,1" fill="#aaa"/>
+    <polygon points="1,0 0.8,0 0.5,1 0.7,1" fill="#aaa"/>
+    <rect x="1.2" y="0.3" width="0.15" height="0.15" fill="#aaa"/>
+    <rect x="1.5" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.5" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.5" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.3" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.3" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.3" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="3.1" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="3.4" y="0" width="0.2" height="1" fill="#aaa"/>
+  </g>
+
+  <!-- CUTOFF centered at x=22.32, width ~5mm, starts at 19.8 -->
+  <g id="cv-cutoff" transform="translate(19.3, 87.5)">
+    <rect x="0" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.8" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.2" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0.8" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.6" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="1.85" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.5" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.5" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.5" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.9" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3.3" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3.3" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="3.3" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+    <rect x="4.1" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="4.1" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="4.1" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+  </g>
+
+  <!-- RES centered at x=38.64, width ~2.5mm, starts at 37.4 -->
+  <g id="cv-res" transform="translate(37, 87.5)">
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.4" y="0" width="0.2" height="0.4" fill="#aaa"/>
+    <rect x="0" y="0.35" width="0.6" height="0.15" fill="#aaa"/>
+    <polygon points="0.15,0.5 0.35,0.5 0.7,1 0.5,1" fill="#aaa"/>
+    <rect x="0.9" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0.9" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.9" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+    <rect x="0.9" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.7" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.7" y="0" width="0.2" height="0.4" fill="#aaa"/>
+    <rect x="1.7" y="0.35" width="0.6" height="0.15" fill="#aaa"/>
+    <rect x="2.1" y="0.35" width="0.2" height="0.45" fill="#aaa"/>
+    <rect x="1.7" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+  </g>
+
+  <!-- ACCENT centered at x=52.96, width ~4.5mm, starts at 50.7 -->
+  <g id="cv-accent" transform="translate(50.2, 87.5)">
+    <polygon points="0.3,1 0.5,1 0.75,0 0.55,0" fill="#aaa"/>
+    <polygon points="1.2,1 1,1 0.75,0 0.95,0" fill="#aaa"/>
+    <rect x="0.45" y="0.6" width="0.6" height="0.15" fill="#aaa"/>
+    <rect x="1.4" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.4" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.4" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.2" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.2" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.2" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="3" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3.4" y="0" width="0.2" height="1" fill="#aaa"/>
+    <polygon points="3,0 3.2,0 3.6,1 3.4,1" fill="#aaa"/>
+    <rect x="3.8" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="4.05" y="0" width="0.2" height="1" fill="#aaa"/>
+  </g>
+
+  <!-- CV Row 2 labels (y=104 jacks): DECAY, SLIDE, ENVMOD, GATE at y=100 -->
+  <!-- DECAY centered at x=8, width ~4mm, starts at 6 -->
+  <g id="cv-decay" transform="translate(4, 99.5)">
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.4" y="0.15" width="0.2" height="0.75" fill="#aaa"/>
+    <rect x="0.8" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0.8" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.8" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+    <rect x="0.8" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.6" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.6" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.6" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <polygon points="2.4,1 2.6,1 2.85,0 2.65,0" fill="#aaa"/>
+    <polygon points="3.3,1 3.1,1 2.85,0 3.05,0" fill="#aaa"/>
+    <rect x="2.55" y="0.6" width="0.6" height="0.15" fill="#aaa"/>
+    <polygon points="3.5,0 3.7,0 4,0.45 3.8,0.45" fill="#aaa"/>
+    <polygon points="4.5,0 4.3,0 4,0.45 4.2,0.45" fill="#aaa"/>
+    <rect x="3.9" y="0.45" width="0.2" height="0.55" fill="#aaa"/>
+  </g>
+
+  <!-- SLIDE centered at x=22.32, width ~4mm, starts at 20.3 -->
+  <g id="cv-slide" transform="translate(19.8, 99.5)">
+    <rect x="0" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0" width="0.2" height="0.4" fill="#aaa"/>
+    <rect x="0" y="0.35" width="0.6" height="0.15" fill="#aaa"/>
+    <rect x="0.4" y="0.35" width="0.2" height="0.45" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.8" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0.8" y="0.8" width="0.5" height="0.2" fill="#aaa"/>
+    <rect x="1.5" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.9" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.9" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.9" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.3" y="0.15" width="0.2" height="0.75" fill="#aaa"/>
+    <rect x="2.7" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.7" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.7" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+    <rect x="2.7" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+  </g>
+
+  <!-- ENVMOD centered at x=38.64, width ~5mm, starts at 36.1 -->
+  <g id="cv-envmod" transform="translate(35.6, 99.5)">
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.8" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.2" y="0" width="0.2" height="1" fill="#aaa"/>
+    <polygon points="0.8,0 1,0 1.4,1 1.2,1" fill="#aaa"/>
+    <polygon points="1.6,0 1.8,0 2.1,1 1.9,1" fill="#aaa"/>
+    <polygon points="2.4,0 2.2,0 2.1,1 2.3,1" fill="#aaa"/>
+    <rect x="2.6" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3.0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <polygon points="2.6,0 2.8,0 3.1,0.6 2.9,0.6" fill="#aaa"/>
+    <polygon points="3.2,0 3,0 3.1,0.6 3.3,0.6" fill="#aaa"/>
+    <rect x="3.4" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="3.4" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="3.4" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3.8" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="4.2" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="4.2" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="4.2" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="4.6" y="0.15" width="0.2" height="0.75" fill="#aaa"/>
+  </g>
+
+  <!-- GATE centered at x=52.96, width ~3.5mm, starts at 51.2 -->
+  <g id="cv-gate" transform="translate(50.7, 99.5)">
+    <rect x="0" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="0.4" y="0.5" width="0.2" height="0.5" fill="#aaa"/>
+    <rect x="0.25" y="0.5" width="0.35" height="0.15" fill="#aaa"/>
+    <polygon points="0.8,1 1,1 1.25,0 1.05,0" fill="#aaa"/>
+    <polygon points="1.7,1 1.5,1 1.25,0 1.45,0" fill="#aaa"/>
+    <rect x="0.95" y="0.6" width="0.6" height="0.15" fill="#aaa"/>
+    <rect x="1.9" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="2.15" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.8" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="2.8" y="0" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="2.8" y="0.4" width="0.4" height="0.15" fill="#aaa"/>
+    <rect x="2.8" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+  </g>
+
+  <!-- OUTPUT section - darker background -->
+  <rect x="0" y="109" width="60.96" height="19.5" fill="#1a1a1a"/>
+
+  <!-- OUT L centered at x=20.32, width ~4mm, starts at 18.3 -->
+  <g id="out-l" transform="translate(17, 111)">
+    <rect x="0" y="0" width="0.8" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.8" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0.6" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.4" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.8" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="2.05" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3" y="0.8" width="0.7" height="0.2" fill="#aaa"/>
+  </g>
+
+  <!-- OUT R centered at x=40.64, width ~4.5mm, starts at 38.4 -->
+  <g id="out-r" transform="translate(37, 111)">
+    <rect x="0" y="0" width="0.8" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0.8" width="0.8" height="0.2" fill="#aaa"/>
+    <rect x="0" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="0.6" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1.4" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="1" y="0.8" width="0.6" height="0.2" fill="#aaa"/>
+    <rect x="1.8" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="2.05" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3" y="0" width="0.2" height="1" fill="#aaa"/>
+    <rect x="3" y="0" width="0.7" height="0.2" fill="#aaa"/>
+    <rect x="3.5" y="0" width="0.2" height="0.4" fill="#aaa"/>
+    <rect x="3" y="0.35" width="0.7" height="0.15" fill="#aaa"/>
+    <polygon points="3.2,0.5 3.4,0.5 3.8,1 3.6,1" fill="#aaa"/>
+  </g>
+
+  <!-- Brand: VULPES79 - centered at 30.48 -->
+  <g id="brand" transform="translate(24.5, 125)">
+    <polygon points="0,0 0.2,0 0.5,1.2 0.3,1.2" fill="#666"/>
+    <polygon points="1,0 0.8,0 0.5,1.2 0.7,1.2" fill="#666"/>
+    <rect x="1.2" y="0" width="0.2" height="1.2" fill="#666"/>
+    <rect x="1.6" y="0" width="0.2" height="1.2" fill="#666"/>
+    <rect x="1.2" y="1" width="0.6" height="0.2" fill="#666"/>
+    <rect x="2" y="0" width="0.2" height="1.2" fill="#666"/>
+    <rect x="2" y="1" width="0.5" height="0.2" fill="#666"/>
+    <rect x="2.7" y="0" width="0.2" height="1.2" fill="#666"/>
+    <rect x="3.1" y="0" width="0.2" height="1.2" fill="#666"/>
+    <rect x="2.7" y="1" width="0.6" height="0.2" fill="#666"/>
+    <rect x="3.5" y="0" width="0.2" height="1.2" fill="#666"/>
+    <rect x="3.5" y="0" width="0.6" height="0.2" fill="#666"/>
+    <rect x="3.5" y="0.5" width="0.4" height="0.15" fill="#666"/>
+    <rect x="3.5" y="1" width="0.6" height="0.2" fill="#666"/>
+    <rect x="4.3" y="0" width="0.6" height="0.2" fill="#666"/>
+    <rect x="4.3" y="0" width="0.2" height="0.5" fill="#666"/>
+    <rect x="4.3" y="0.5" width="0.6" height="0.15" fill="#666"/>
+    <rect x="4.7" y="0.5" width="0.2" height="0.5" fill="#666"/>
+    <rect x="4.3" y="1" width="0.6" height="0.2" fill="#666"/>
+    <rect x="5.2" y="0" width="0.6" height="0.2" fill="#666"/>
+    <rect x="5.2" y="0.5" width="0.6" height="0.15" fill="#666"/>
+    <rect x="5.2" y="1" width="0.6" height="0.2" fill="#666"/>
+    <rect x="5.6" y="0" width="0.2" height="0.65" fill="#666"/>
+    <rect x="5.2" y="0.5" width="0.2" height="0.7" fill="#666"/>
+    <rect x="6" y="0" width="0.6" height="0.2" fill="#666"/>
+    <rect x="6.2" y="0" width="0.2" height="0.55" fill="#666"/>
+    <rect x="6" y="0.5" width="0.6" height="0.15" fill="#666"/>
+    <rect x="6" y="0.5" width="0.2" height="0.7" fill="#666"/>
+    <rect x="6" y="1" width="0.6" height="0.2" fill="#666"/>
+  </g>
+</svg>
