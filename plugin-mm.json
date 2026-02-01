@@ -1,0 +1,15 @@
+{
+  "MetaModuleBrandName": "Vulpes79Ports",
+  "MetaModuleBrandSlug": "Vulpes79Ports",
+  "MetaModulePluginMaintainer": "Vulpes79Ports",
+  "MetaModulePluginMaintainerEmail": "",
+  "MetaModulePluginMaintainerUrl": "",
+  "MetaModuleDescription": "Vulpes79 ports modules optimised for metamodule",
+  "MetaModuleIncludedModules":
+  [
+    {
+      "slug": "AcidusVersio",
+      "name": "Acidus Versio"
+    }
+  ]
+}

@@ -10,3 +10,5 @@
 /build
 /dep
 /dist
+/metamodule-plugins
+*.afdesign~lock~

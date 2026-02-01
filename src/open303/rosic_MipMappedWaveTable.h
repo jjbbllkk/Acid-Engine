@@ -166,7 +166,7 @@ namespace rosic
     int    waveform;   // index of the currently chosen native waveform
     double sampleRate; // the sampleRate
 
-    double prototypeTable[tableLength];
+    double prototypeTable[tableLength+4];
       // this is the prototype-table with full bandwidth. one additional sample (same as 
       // prototypeTable[0]) for linear interpolation without need for table wraparound at the last 
       // sample (-> saves one if-statement each audio-cycle) ...and a three further addtional 
