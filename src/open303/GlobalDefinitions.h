@@ -88,7 +88,11 @@ inline double dummyFunction(double x) { return x; }
 
 //extract the exponent from a IEEE 754 floating point number (single and double precision):
 #define EXPOFFLT(value) (((*((reinterpret_cast<UINT32 *>(&value)))&0x7FFFFFFF)>>23)-127)
-#define EXPOFDBL(value) (((*((reinterpret_cast<UINT64 *>(&value)))&0x7FFFFFFFFFFFFFFFULL)>>52)-1023)
+#define EXPOFDBL(value) ({ \
+  UINT64 temp; \
+  memcpy(&temp, &value, sizeof(UINT64)); \
+  (int)(((temp & 0x7FFFFFFFFFFFFFFFULL) >> 52) - 1023); \
+})
   // ULL indicates an unsigned long long literal constant
 
 #endif
