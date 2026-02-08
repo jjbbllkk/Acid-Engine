@@ -225,24 +225,24 @@ struct AcidEngineWidget : ModuleWidget {
 		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(36.96, 11.5)), module, AcidEngine::VU_LIGHT_3));
 
 		// Top row knobs: TUNING (left), RESONANCE (right)
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(12.0, 22.0)), module, AcidEngine::TUNING_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(48.96, 22.0)), module, AcidEngine::RESONANCE_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(12.0, 23.5)), module, AcidEngine::TUNING_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(48.96, 23.5)), module, AcidEngine::RESONANCE_PARAM));
 
 		// Second row: CUTOFF (center, larger)
 		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(30.48, 35.0)), module, AcidEngine::CUTOFF_PARAM));
 
 		// Third row: DECAY (left), ENVMOD (right)
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(15.24, 50.0)), module, AcidEngine::DECAY_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(45.72, 50.0)), module, AcidEngine::ENVMOD_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(15.24, 48.5)), module, AcidEngine::DECAY_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(45.72, 48.5)), module, AcidEngine::ENVMOD_PARAM));
 
 		// Fourth row: Waveform switch (left), SLIDE (center)
-		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 64.0)), module, AcidEngine::WAVEFORM_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 64.0)), module, AcidEngine::SLIDE_PARAM));
+		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 62.0)), module, AcidEngine::WAVEFORM_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 62.0)), module, AcidEngine::SLIDE_PARAM));
 
 		// Fifth row: Mode switch (left), ACCENT (center), TRIG button (right)
-		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 78.0)), module, AcidEngine::MODE_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 78.0)), module, AcidEngine::ACCENT_PARAM));
-		addParam(createParamCentered<VCVButton>(mm2px(Vec(48.96, 78.0)), module, AcidEngine::TRIG_BUTTON_PARAM));
+		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 76.0)), module, AcidEngine::MODE_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 76.0)), module, AcidEngine::ACCENT_PARAM));
+		addParam(createParamCentered<VCVButton>(mm2px(Vec(48.96, 76.0)), module, AcidEngine::TRIG_BUTTON_PARAM));
 
 		// CV inputs - Row 1: TUNING, CUTOFF, RES, ACCENT
 		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 92.0)), module, AcidEngine::TUNING_INPUT));
