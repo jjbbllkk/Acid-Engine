@@ -1,15 +1,15 @@
-# Acidus Versio
+# Acid Engine
 
 A TB-303 acid synth emulation for VCV Rack 2.
 
 ## Overview
 
-Acidus Versio brings the iconic sound of the Roland TB-303 to VCV Rack, featuring authentic filter squelch, accent behavior, and slide. The module offers three operational modes ranging from tame to wild.
+Acid Engine brings the iconic sound of the Roland TB-303 to VCV Rack, featuring authentic filter squelch, accent behavior, and slide. The module offers three operational modes ranging from tame to wild.
 
 ## Installation
 
-1.  Go to the [releases page](https://github.com/jjbbllkk/Acidus-Versio-VCV-Rack-Port/releases).
-2.  Download the `.vcvplugin` file for your operating system. For example, `AcidusVersio-2.0.0-mac-arm64.vcvplugin` for Apple Silicon Macs.
+1.  Go to the [releases page](https://github.com/jjbbllkk/Acid-Engine/releases).
+2.  Download the `.vcvplugin` file for your operating system. For example, `AcidEngine-2.0.0-mac-arm64.vcvplugin` for Apple Silicon Macs.
 3.  Place the downloaded `.vcvplugin` file into the VCV Rack `plugins` folder for your operating system:
     -   **macOS:** `~/Documents/Rack2/plugins/`
     -   **Windows:** `C:\Users\<Your Username>\Documents\Rack2\plugins\`

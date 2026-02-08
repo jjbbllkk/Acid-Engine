@@ -12,7 +12,7 @@ CXXFLAGS += -I./src/open303
 SOURCES += src/plugin.cpp
 
 # 2. Your module logic
-SOURCES += src/AcidusVersio.cpp
+SOURCES += src/AcidEngine.cpp
 
 # 3. All the synth engine files
 SOURCES += $(wildcard src/open303/*.cpp)

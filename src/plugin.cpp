@@ -10,7 +10,7 @@ extern "C" __attribute__((visibility("default"))) uint32_t rack_plugin_abi_versi
 // --- INITIALIZE THE PLUGIN ---
 extern "C" __attribute__((visibility("default"))) void init(Plugin* p) {
 	pluginInstance = p;
-	
+
 	// Register the module model
-	p->addModel(modelAcidusVersio);
+	p->addModel(modelAcidEngine);
 }

@@ -3,7 +3,7 @@
 
 using namespace rosic;
 
-struct AcidusVersio : Module {
+struct AcidEngine : Module {
 	enum ParamId {
 		TUNING_PARAM,
 		CUTOFF_PARAM,
@@ -48,7 +48,7 @@ struct AcidusVersio : Module {
 	int active_note = 60;
 	float vuLevel = 0.f;
 
-	AcidusVersio() {
+	AcidEngine() {
 		config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
 
 		// Knobs
@@ -208,10 +208,10 @@ struct AcidusVersio : Module {
 	}
 };
 
-struct AcidusVersioWidget : ModuleWidget {
-	AcidusVersioWidget(AcidusVersio* module) {
+struct AcidEngineWidget : ModuleWidget {
+	AcidEngineWidget(AcidEngine* module) {
 		setModule(module);
-		setPanel(createPanel(asset::plugin(pluginInstance, "res/AcidusVersio.svg")));
+		setPanel(createPanel(asset::plugin(pluginInstance, "res/AcidEngine.svg")));
 
 		// Screws
 		addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, 0)));
@@ -220,47 +220,47 @@ struct AcidusVersioWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
 		// VU meter lights
-		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(24.0, 11.5)), module, AcidusVersio::VU_LIGHT_1));
-		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(30.48, 11.5)), module, AcidusVersio::VU_LIGHT_2));
-		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(36.96, 11.5)), module, AcidusVersio::VU_LIGHT_3));
+		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(24.0, 11.5)), module, AcidEngine::VU_LIGHT_1));
+		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(30.48, 11.5)), module, AcidEngine::VU_LIGHT_2));
+		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(36.96, 11.5)), module, AcidEngine::VU_LIGHT_3));
 
 		// Top row knobs: TUNING (left), RESONANCE (right)
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(12.0, 22.0)), module, AcidusVersio::TUNING_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(48.96, 22.0)), module, AcidusVersio::RESONANCE_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(12.0, 22.0)), module, AcidEngine::TUNING_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(48.96, 22.0)), module, AcidEngine::RESONANCE_PARAM));
 
 		// Second row: CUTOFF (center, larger)
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(30.48, 35.0)), module, AcidusVersio::CUTOFF_PARAM));
+		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(30.48, 35.0)), module, AcidEngine::CUTOFF_PARAM));
 
 		// Third row: DECAY (left), ENVMOD (right)
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(15.24, 50.0)), module, AcidusVersio::DECAY_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(45.72, 50.0)), module, AcidusVersio::ENVMOD_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(15.24, 50.0)), module, AcidEngine::DECAY_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(45.72, 50.0)), module, AcidEngine::ENVMOD_PARAM));
 
 		// Fourth row: Waveform switch (left), SLIDE (center)
-		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 64.0)), module, AcidusVersio::WAVEFORM_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 64.0)), module, AcidusVersio::SLIDE_PARAM));
+		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 64.0)), module, AcidEngine::WAVEFORM_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 64.0)), module, AcidEngine::SLIDE_PARAM));
 
 		// Fifth row: Mode switch (left), ACCENT (center), TRIG button (right)
-		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 78.0)), module, AcidusVersio::MODE_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 78.0)), module, AcidusVersio::ACCENT_PARAM));
-		addParam(createParamCentered<VCVButton>(mm2px(Vec(48.96, 78.0)), module, AcidusVersio::TRIG_BUTTON_PARAM));
+		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 78.0)), module, AcidEngine::MODE_PARAM));
+		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 78.0)), module, AcidEngine::ACCENT_PARAM));
+		addParam(createParamCentered<VCVButton>(mm2px(Vec(48.96, 78.0)), module, AcidEngine::TRIG_BUTTON_PARAM));
 
 		// CV inputs - Row 1: TUNING, CUTOFF, RES, ACCENT
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 92.0)), module, AcidusVersio::TUNING_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.32, 92.0)), module, AcidusVersio::CUTOFF_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.64, 92.0)), module, AcidusVersio::RES_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(52.96, 92.0)), module, AcidusVersio::ACCENT_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 92.0)), module, AcidEngine::TUNING_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.32, 92.0)), module, AcidEngine::CUTOFF_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.64, 92.0)), module, AcidEngine::RES_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(52.96, 92.0)), module, AcidEngine::ACCENT_INPUT));
 
 		// CV inputs - Row 2: DECAY, SLIDE, ENVMOD, TRIG
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 104.0)), module, AcidusVersio::DECAY_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.32, 104.0)), module, AcidusVersio::SLIDE_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.64, 104.0)), module, AcidusVersio::ENVMOD_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(52.96, 104.0)), module, AcidusVersio::TRIG_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 104.0)), module, AcidEngine::DECAY_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.32, 104.0)), module, AcidEngine::SLIDE_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.64, 104.0)), module, AcidEngine::ENVMOD_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(52.96, 104.0)), module, AcidEngine::TRIG_INPUT));
 
 		// Outputs: OUT L, OUT R
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(20.32, 118.0)), module, AcidusVersio::OUT_L_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(40.64, 118.0)), module, AcidusVersio::OUT_R_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(20.32, 118.0)), module, AcidEngine::OUT_L_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(40.64, 118.0)), module, AcidEngine::OUT_R_OUTPUT));
 	}
 };
 
 // Define the Model object (this is referenced in plugin.cpp)
-Model* modelAcidusVersio = createModel<AcidusVersio, AcidusVersioWidget>("AcidusVersio");
+Model* modelAcidEngine = createModel<AcidEngine, AcidEngineWidget>("AcidEngine");

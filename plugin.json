@@ -1,21 +1,21 @@
 {
-  "slug": "AcidusVersio",
-  "name": "Acidus Versio",
+  "slug": "AcidEngine",
+  "name": "Acid Engine",
   "version": "2.0.0",
   "license": "MIT",
   "brand": "Vulpes79",
   "author": "Vulpes79",
   "authorEmail": "",
   "authorUrl": "https://github.com/jjbbllkk",
-  "pluginUrl": "https://github.com/jjbbllkk/Acidus-Versio-VCV-Rack-Port",
-  "manualUrl": "https://github.com/jjbbllkk/Acidus-Versio-VCV-Rack-Port#readme",
-  "sourceUrl": "https://github.com/jjbbllkk/Acidus-Versio-VCV-Rack-Port",
+  "pluginUrl": "https://github.com/jjbbllkk/Acid-Engine",
+  "manualUrl": "https://github.com/jjbbllkk/Acid-Engine#readme",
+  "sourceUrl": "https://github.com/jjbbllkk/Acid-Engine",
   "donateUrl": "",
   "changelogUrl": "",
   "modules": [
     {
-      "slug": "AcidusVersio",
-      "name": "Acidus Versio",
+      "slug": "AcidEngine",
+      "name": "Acid Engine",
       "description": "Acid Synth Voice",
       "tags": ["Synth", "Voice"]
     }
