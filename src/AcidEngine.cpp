@@ -220,28 +220,28 @@ struct AcidEngineWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
 		// VU meter lights
-		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(24.0, 11.5)), module, AcidEngine::VU_LIGHT_1));
-		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(30.48, 11.5)), module, AcidEngine::VU_LIGHT_2));
-		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(36.96, 11.5)), module, AcidEngine::VU_LIGHT_3));
+		addChild(createLightCentered<MediumLight<GreenLight>>(mm2px(Vec(24.0, 11.5)), module, AcidEngine::VU_LIGHT_1));
+		addChild(createLightCentered<MediumLight<GreenLight>>(mm2px(Vec(30.48, 11.5)), module, AcidEngine::VU_LIGHT_2));
+		addChild(createLightCentered<MediumLight<GreenLight>>(mm2px(Vec(36.96, 11.5)), module, AcidEngine::VU_LIGHT_3));
 
 		// Top row knobs: TUNING (left), RESONANCE (right)
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(12.0, 23.5)), module, AcidEngine::TUNING_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(48.96, 23.5)), module, AcidEngine::RESONANCE_PARAM));
+		addParam(createParamCentered<Rogan1PWhite>(mm2px(Vec(12.0, 27.0)), module, AcidEngine::TUNING_PARAM));
+		addParam(createParamCentered<Rogan1PWhite>(mm2px(Vec(48.96, 27.0)), module, AcidEngine::RESONANCE_PARAM));
 
 		// Second row: CUTOFF (center, larger)
-		addParam(createParamCentered<RoundLargeBlackKnob>(mm2px(Vec(30.48, 35.0)), module, AcidEngine::CUTOFF_PARAM));
+		addParam(createParamCentered<Rogan3PSWhite>(mm2px(Vec(30.48, 35.0)), module, AcidEngine::CUTOFF_PARAM));
 
-		// Third row: DECAY (left), ENVMOD (right)
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(15.24, 48.5)), module, AcidEngine::DECAY_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(45.72, 48.5)), module, AcidEngine::ENVMOD_PARAM));
+		// Third row: DECAY (left), ENVMOD (right) - aligned with TUNE/RES columns
+		addParam(createParamCentered<Rogan1PSWhite>(mm2px(Vec(12.0, 45.5)), module, AcidEngine::DECAY_PARAM));
+		addParam(createParamCentered<Rogan1PSWhite>(mm2px(Vec(48.96, 45.5)), module, AcidEngine::ENVMOD_PARAM));
 
 		// Fourth row: Waveform switch (left), SLIDE (center)
 		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 62.0)), module, AcidEngine::WAVEFORM_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 62.0)), module, AcidEngine::SLIDE_PARAM));
+		addParam(createParamCentered<Rogan1PWhite>(mm2px(Vec(30.48, 59.0)), module, AcidEngine::SLIDE_PARAM));
 
 		// Fifth row: Mode switch (left), ACCENT (center), TRIG button (right)
 		addParam(createParamCentered<CKSSThree>(mm2px(Vec(12.0, 76.0)), module, AcidEngine::MODE_PARAM));
-		addParam(createParamCentered<RoundBlackKnob>(mm2px(Vec(30.48, 76.0)), module, AcidEngine::ACCENT_PARAM));
+		addParam(createParamCentered<Rogan1PWhite>(mm2px(Vec(30.48, 76.0)), module, AcidEngine::ACCENT_PARAM));
 		addParam(createParamCentered<VCVButton>(mm2px(Vec(48.96, 76.0)), module, AcidEngine::TRIG_BUTTON_PARAM));
 
 		// CV inputs - Row 1: TUNING, CUTOFF, RES, ACCENT
