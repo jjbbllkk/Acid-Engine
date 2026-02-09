@@ -41,8 +41,7 @@ struct AcidEngine : Module {
 	};
 
 	Open303 tb303;
-	dsp::SchmittTrigger gateTrigger;
-	dsp::SchmittTrigger buttonTrigger;
+	bool gateHigh = false;
 
 	float sampleRate = 44100.f;
 	int active_note = 60;
@@ -98,8 +97,9 @@ struct AcidEngine : Module {
 			tb303.setSampleRate(sampleRate);
 		}
 
-		// Read mode switch (0=Baby Fish, 1=Momma Fish, 2=Devil Fish)
-		int mode = (int)params[MODE_PARAM].getValue();
+		// Read mode switch - CKSSThree: top=2, bottom=0, so invert
+		// Top=Baby Fish, Middle=Momma Fish, Bottom=Devil Fish
+		int mode = 2 - (int)params[MODE_PARAM].getValue();
 
 		// Mode-dependent parameter ranges
 		float cutoffMin, cutoffMax, resMax, decayMin, decayMax, envmodMax, accentMax;
@@ -141,8 +141,9 @@ struct AcidEngine : Module {
 		float accentAmount = params[ACCENT_PARAM].getValue();
 		bool accentTriggered = inputs[ACCENT_INPUT].getVoltage() > 2.5f;
 
-		// Waveform switch (0=Saw, 1=Blend, 2=Square)
-		int waveform = (int)params[WAVEFORM_PARAM].getValue();
+		// Waveform switch - CKSSThree: top=2, bottom=0, so invert
+		// Top=Saw, Middle=Blend, Bottom=Square
+		int waveform = 2 - (int)params[WAVEFORM_PARAM].getValue();
 		tb303.setWaveform(waveform * 0.5f);
 
 		// Apply tuning (semitone offset from 440Hz)
@@ -159,11 +160,12 @@ struct AcidEngine : Module {
 		tb303.setEnvMod(envmod * envmodMax);
 		tb303.setAccent(accentAmount * accentMax);
 
-		// Handle Gate & Note (trigger input OR button)
+		// Handle Gate & Note (gate input OR button)
 		bool buttonPressed = params[TRIG_BUTTON_PARAM].getValue() > 0.5f;
-		float trigVoltage = inputs[TRIG_INPUT].getVoltage() + (buttonPressed ? 10.f : 0.f);
+		bool gateInput = (inputs[TRIG_INPUT].getVoltage() + (buttonPressed ? 10.f : 0.f)) > 2.5f;
 
-		if (gateTrigger.process(trigVoltage)) {
+		if (gateInput && !gateHigh) {
+			// Rising edge — note on
 			float volts = inputs[TUNING_INPUT].getVoltage();
 			int midi_note = (int)std::round(volts * 12.0f + 60.0f);
 
@@ -187,6 +189,13 @@ struct AcidEngine : Module {
 				tb303.noteOnPortamento(active_note, velocity);
 			}
 		}
+
+		if (!gateInput && gateHigh) {
+			// Falling edge — note off (velocity 0 triggers noteOff in Open303)
+			tb303.noteOn(active_note, 0);
+		}
+
+		gateHigh = gateInput;
 
 		float out = (float)tb303.getSample() * 5.0f;
 		outputs[OUT_L_OUTPUT].setVoltage(out);
