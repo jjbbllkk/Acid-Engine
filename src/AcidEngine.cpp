@@ -47,6 +47,13 @@ struct AcidEngine : Module {
 	int active_note = 60;
 	float vuLevel = 0.f;
 
+	int controlCounter = 0;
+	static const int controlRate = 32;
+	float cachedSlide = 0.f;
+	bool cachedAccentTriggered = false;
+
+
+
 	AcidEngine() {
 		config(PARAMS_LEN, INPUTS_LEN, OUTPUTS_LEN, LIGHTS_LEN);
 
@@ -97,68 +104,77 @@ struct AcidEngine : Module {
 			tb303.setSampleRate(sampleRate);
 		}
 
-		// Read mode switch - CKSSThree: top=2, bottom=0, so invert
-		// Top=Baby Fish, Middle=Momma Fish, Bottom=Devil Fish
-		int mode = 2 - (int)params[MODE_PARAM].getValue();
+		// Control-rate parameter updates (~1.5kHz at 48kHz sample rate)
+		float slide = 0.f;
+		bool accentTriggered = false;
+		if (++controlCounter >= controlRate) {
+			controlCounter = 0;
 
-		// Mode-dependent parameter ranges
-		float cutoffMin, cutoffMax, resMax, decayMin, decayMax, envmodMax, accentMax;
-		switch (mode) {
-			case 0: // Baby Fish - restricted ranges
-				cutoffMin = 200.f; cutoffMax = 2000.f;
-				resMax = 50.f;
-				decayMin = 200.f; decayMax = 1000.f;
-				envmodMax = 50.f;
-				accentMax = 25.f;
-				break;
-			case 2: // Devil Fish - full extended ranges
-				cutoffMin = 20.f; cutoffMax = 8000.f;
-				resMax = 100.f;
-				decayMin = 30.f; decayMax = 3000.f;
-				envmodMax = 100.f;
-				accentMax = 100.f;
-				break;
-			default: // Momma Fish - standard 303 ranges
-				cutoffMin = 100.f; cutoffMax = 4000.f;
-				resMax = 80.f;
-				decayMin = 200.f; decayMax = 2000.f;
-				envmodMax = 80.f;
-				accentMax = 50.f;
-				break;
+			// Read mode switch - CKSSThree: top=2, bottom=0, so invert
+			// Top=Baby Fish, Middle=Momma Fish, Bottom=Devil Fish
+			int mode = 2 - (int)params[MODE_PARAM].getValue();
+
+			// Mode-dependent parameter ranges
+			float cutoffMin, cutoffMax, resMax, decayMin, decayMax, envmodMax, accentMax;
+			switch (mode) {
+				case 0: // Baby Fish - restricted ranges
+					cutoffMin = 200.f; cutoffMax = 2000.f;
+					resMax = 50.f;
+					decayMin = 200.f; decayMax = 1000.f;
+					envmodMax = 50.f;
+					accentMax = 25.f;
+					break;
+				case 2: // Devil Fish - full extended ranges
+					cutoffMin = 20.f; cutoffMax = 8000.f;
+					resMax = 100.f;
+					decayMin = 30.f; decayMax = 3000.f;
+					envmodMax = 100.f;
+					accentMax = 100.f;
+					break;
+				default: // Momma Fish - standard 303 ranges
+					cutoffMin = 100.f; cutoffMax = 4000.f;
+					resMax = 80.f;
+					decayMin = 200.f; decayMax = 2000.f;
+					envmodMax = 80.f;
+					accentMax = 50.f;
+					break;
+			}
+
+			// Read parameters with CV modulation (CV is 0-10V, scaled to 0-1 range)
+			float tuning = params[TUNING_PARAM].getValue();
+			float cutoff = clamp(params[CUTOFF_PARAM].getValue() + inputs[CUTOFF_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
+			float resonance = clamp(params[RESONANCE_PARAM].getValue() + inputs[RES_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
+			float decay = clamp(params[DECAY_PARAM].getValue() + inputs[DECAY_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
+			float envmod = clamp(params[ENVMOD_PARAM].getValue() + inputs[ENVMOD_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
+			slide = clamp(params[SLIDE_PARAM].getValue() + inputs[SLIDE_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
+			cachedSlide = slide;
+
+			// Accent: knob controls intensity, CV acts as gate trigger
+			float accentAmount = params[ACCENT_PARAM].getValue();
+			accentTriggered = inputs[ACCENT_INPUT].getVoltage() > 2.5f;
+			cachedAccentTriggered = accentTriggered;
+
+			// Waveform switch - CKSSThree: top=2, bottom=0, so invert
+			// Top=Saw, Middle=Blend, Bottom=Square
+			int waveform = 2 - (int)params[WAVEFORM_PARAM].getValue();
+			tb303.setWaveform(waveform * 0.5f);
+
+			// Apply tuning (semitone offset from 440Hz)
+			float tuningHz = 440.f * std::pow(2.f, tuning / 12.f);
+			tb303.setTuning(tuningHz);
+
+			// Apply mode-scaled parameters to Open303
+			tb303.setCutoff(cutoffMin + cutoff * (cutoffMax - cutoffMin));
+			tb303.setResonance(resonance * resMax, false);
+			float decayMs = decayMin + decay * (decayMax - decayMin);
+			tb303.setDecay(decayMs);
+			tb303.setAccentDecay(decayMs * 0.2f);
+			tb303.setEnvMod(envmod * envmodMax);
+			tb303.setAccent(accentAmount * accentMax);
+		} else {
+			slide = cachedSlide;
+			accentTriggered = cachedAccentTriggered;
 		}
-
-		// Read parameters with CV modulation (CV is 0-10V, scaled to 0-1 range)
-		// Note: TUNING_PARAM is only for master detuning (+/- 12 semitones from A=440)
-		// V/Oct pitch control is handled separately via MIDI note calculation
-		float tuning = params[TUNING_PARAM].getValue();
-		float cutoff = clamp(params[CUTOFF_PARAM].getValue() + inputs[CUTOFF_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
-		float resonance = clamp(params[RESONANCE_PARAM].getValue() + inputs[RES_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
-		float decay = clamp(params[DECAY_PARAM].getValue() + inputs[DECAY_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
-		float envmod = clamp(params[ENVMOD_PARAM].getValue() + inputs[ENVMOD_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
-		float slide = clamp(params[SLIDE_PARAM].getValue() + inputs[SLIDE_INPUT].getVoltage() * 0.1f, 0.f, 1.f);
-
-		// Accent: knob controls intensity, CV acts as gate trigger
-		float accentAmount = params[ACCENT_PARAM].getValue();
-		bool accentTriggered = inputs[ACCENT_INPUT].getVoltage() > 2.5f;
-
-		// Waveform switch - CKSSThree: top=2, bottom=0, so invert
-		// Top=Saw, Middle=Blend, Bottom=Square
-		int waveform = 2 - (int)params[WAVEFORM_PARAM].getValue();
-		tb303.setWaveform(waveform * 0.5f);
-
-		// Apply tuning (semitone offset from 440Hz)
-		float tuningHz = 440.f * std::pow(2.f, tuning / 12.f);
-		tb303.setTuning(tuningHz);
-
-		// Apply mode-scaled parameters to Open303
-		tb303.setCutoff(cutoffMin + cutoff * (cutoffMax - cutoffMin));
-		tb303.setResonance(resonance * resMax);
-		float decayMs = decayMin + decay * (decayMax - decayMin);
-		tb303.setDecay(decayMs);
-		// Accent decay is ~20% of normal decay (authentic 303 behavior: shorter, punchier)
-		tb303.setAccentDecay(decayMs * 0.2f);
-		tb303.setEnvMod(envmod * envmodMax);
-		tb303.setAccent(accentAmount * accentMax);
 
 		// Handle Gate & Note (gate input OR button)
 		bool buttonPressed = params[TRIG_BUTTON_PARAM].getValue() > 0.5f;
@@ -229,9 +245,9 @@ struct AcidEngineWidget : ModuleWidget {
 		addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
 
 		// VU meter lights
-		addChild(createLightCentered<MediumLight<GreenLight>>(mm2px(Vec(24.0, 11.5)), module, AcidEngine::VU_LIGHT_1));
-		addChild(createLightCentered<MediumLight<GreenLight>>(mm2px(Vec(30.48, 11.5)), module, AcidEngine::VU_LIGHT_2));
-		addChild(createLightCentered<MediumLight<GreenLight>>(mm2px(Vec(36.96, 11.5)), module, AcidEngine::VU_LIGHT_3));
+		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(24.0, 11.5)), module, AcidEngine::VU_LIGHT_1));
+		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(30.48, 11.5)), module, AcidEngine::VU_LIGHT_2));
+		addChild(createLightCentered<MediumLight<YellowLight>>(mm2px(Vec(36.96, 11.5)), module, AcidEngine::VU_LIGHT_3));
 
 		// Top row knobs: TUNING (left), RESONANCE (right)
 		addParam(createParamCentered<Rogan1PWhite>(mm2px(Vec(12.0, 27.0)), module, AcidEngine::TUNING_PARAM));

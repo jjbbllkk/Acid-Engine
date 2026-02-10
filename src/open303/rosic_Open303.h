@@ -77,7 +77,7 @@ namespace rosic
     void setCutoff(double newCutoff); 
 
     /** Sets the resonance amount for the filter. */
-    void setResonance(double newResonance) { filter.setResonance(newResonance); }
+    void setResonance(double newResonance, bool updateCoefficients = true) { filter.setResonance(newResonance, updateCoefficients); }
 
     /** Sets the modulation depth of the filter's cutoff frequency by the filter-envelope generator 
     (in percent). */
@@ -335,6 +335,7 @@ namespace rosic
     int    noteOffCountDown; // a countdown variable till next note-off in sequencer mode
     bool   slideToNextNote;  // indicate that we need to slide to the next note in sequencer mode
     bool   idle;             // flag to indicate that we have currently nothing to do in getSample
+    bool   envModDirty;      // flag to defer calculateEnvModScalerAndOffset to getSample
 
     std::list<MidiNoteEvent> noteList;
 
@@ -364,6 +365,11 @@ namespace rosic
     if( idle )
       return 0.0;
 
+    if( envModDirty )
+    {
+      calculateEnvModScalerAndOffset();
+      envModDirty = false;
+    }
 
     // calculate instantaneous oscillator frequency and set up the oscillator:
     double instFreq = pitchSlewLimiter.getSample(oscFreq);
@@ -380,7 +386,7 @@ namespace rosic
     tmp2 = n2 * rc2.getSample(tmp2);  
     tmp1 = envScaler * ( tmp1 - envOffset );  // seems not to work yet
     tmp2 = accentGain*tmp2;
-    double instCutoff = cutoff * pow(2.0, tmp1+tmp2);
+    double instCutoff = cutoff * exp(0.69314718055994530941723212145818 * (tmp1+tmp2));
     filter.setCutoff(instCutoff);
 
     double ampEnvOut = ampEnv.getSample();
@@ -409,9 +415,7 @@ namespace rosic
     tmp *= ampScaler;
 
     // find out whether we may switch ourselves off for the next call:
-    idle = false;
-    //idle = (sequencer.getSequencerMode() == AcidSequencer::OFF && ampEnv.endIsReached() 
-    //        && fabs(tmp) < 0.000001); // ampEnvOut < 0.000001;
+    idle = ampEnv.endIsReached() && fabs(tmp) < 0.000001;
 
     return tmp;
   }

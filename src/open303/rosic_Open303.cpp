@@ -29,6 +29,7 @@ Open303::Open303()
   noteOffCountDown =     0;
   slideToNextNote  = false;
   idle             = true;
+  envModDirty      = false;
 
   setEnvMod(25.0);
 
@@ -103,13 +104,13 @@ void Open303::setSampleRate(double newSampleRate)
 void Open303::setCutoff(double newCutoff)
 {
   cutoff = newCutoff;
-  calculateEnvModScalerAndOffset();
+  envModDirty = true;
 }
 
 void Open303::setEnvMod(double newEnvMod)
 {
   envMod = newEnvMod;
-  calculateEnvModScalerAndOffset();
+  envModDirty = true;
 }
 
 void Open303::setAccent(double newAccent)

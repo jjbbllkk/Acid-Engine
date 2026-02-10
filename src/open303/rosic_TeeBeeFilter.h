@@ -165,6 +165,8 @@ namespace rosic
 
   INLINE void TeeBeeFilter::setResonance(double newResonance, bool updateCoefficients)
   {
+    if( 0.01 * newResonance == resonanceRaw )
+      return;
     resonanceRaw    = 0.01 * newResonance;
     resonanceSkewed = (1.0-exp(-3.0*resonanceRaw)) / (1.0-exp(-3.0));
     if( updateCoefficients == true )
