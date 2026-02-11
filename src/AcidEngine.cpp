@@ -270,20 +270,20 @@ struct AcidEngineWidget : ModuleWidget {
 		addParam(createParamCentered<VCVButton>(mm2px(Vec(48.96, 76.0)), module, AcidEngine::TRIG_BUTTON_PARAM));
 
 		// CV inputs - Row 1: TUNING, CUTOFF, RES, ACCENT
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 92.0)), module, AcidEngine::TUNING_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.32, 92.0)), module, AcidEngine::CUTOFF_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.64, 92.0)), module, AcidEngine::RES_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(52.96, 92.0)), module, AcidEngine::ACCENT_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.058, 92.0)), module, AcidEngine::TUNING_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(23.378, 92.0)), module, AcidEngine::CUTOFF_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(37.582, 92.0)), module, AcidEngine::RES_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(51.902, 92.0)), module, AcidEngine::ACCENT_INPUT));
 
 		// CV inputs - Row 2: DECAY, SLIDE, ENVMOD, TRIG
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(8.0, 104.0)), module, AcidEngine::DECAY_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(22.32, 104.0)), module, AcidEngine::SLIDE_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(38.64, 104.0)), module, AcidEngine::ENVMOD_INPUT));
-		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(52.96, 104.0)), module, AcidEngine::TRIG_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(9.058, 104.0)), module, AcidEngine::DECAY_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(23.378, 104.0)), module, AcidEngine::SLIDE_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(37.582, 104.0)), module, AcidEngine::ENVMOD_INPUT));
+		addInput(createInputCentered<PJ301MPort>(mm2px(Vec(51.902, 104.0)), module, AcidEngine::TRIG_INPUT));
 
 		// Outputs: OUT L, OUT R
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(20.32, 118.0)), module, AcidEngine::OUT_L_OUTPUT));
-		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(40.64, 118.0)), module, AcidEngine::OUT_R_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(37.582, 116.315)), module, AcidEngine::OUT_L_OUTPUT));
+		addOutput(createOutputCentered<PJ301MPort>(mm2px(Vec(51.902, 116.315)), module, AcidEngine::OUT_R_OUTPUT));
 	}
 };
 
