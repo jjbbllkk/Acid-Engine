@@ -2,6 +2,10 @@
 
 A TB-303 acid synth emulation for VCV Rack 2.
 
+<p align="center">
+  <img src="res/AcidEngine.svg" alt="Acid Engine panel" width="180">
+</p>
+
 ## Overview
 
 Acid Engine brings the iconic sound of the Roland TB-303 to VCV Rack, featuring authentic filter squelch, accent behavior, and slide. The module offers three operational modes ranging from tame to wild.
