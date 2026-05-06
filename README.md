@@ -8,13 +8,55 @@ Acid Engine brings the iconic sound of the Roland TB-303 to VCV Rack, featuring 
 
 ## Installation
 
-1.  Go to the [releases page](https://github.com/jjbbllkk/Acid-Engine/releases).
-2.  Download the `.vcvplugin` file for your operating system. For example, `AcidEngine-2.0.0-mac-arm64.vcvplugin` for Apple Silicon Macs.
-3.  Place the downloaded `.vcvplugin` file into the VCV Rack `plugins` folder for your operating system:
-    -   **macOS:** `~/Documents/Rack2/plugins/`
-    -   **Windows:** `C:\Users\<Your Username>\Documents\Rack2\plugins\`
-    -   **Linux:** `~/.Rack2/plugins/`
-4.  Restart VCV Rack. Rack will automatically unzip the `.vcvplugin` file and delete it after installation.
+Pre-built `.vcvplugin` files for all supported platforms are available on the [releases page](https://github.com/jjbbllkk/Acid-Engine/releases).
+
+### Download
+
+| Platform | Architecture | File |
+|----------|--------------|------|
+| macOS (Apple Silicon) | arm64 | `AcidEngine-<version>-mac-arm64.vcvplugin` |
+| macOS (Intel) | x86_64 | `AcidEngine-<version>-mac-x64.vcvplugin` |
+| Windows | x86_64 | `AcidEngine-<version>-win-x64.vcvplugin` |
+| Linux | x86_64 | `AcidEngine-<version>-lin-x64.vcvplugin` |
+
+### Install methods
+
+**Method A — Rack menu (recommended)**
+
+In VCV Rack, choose **Library → Install Plugin from File…** and pick the downloaded `.vcvplugin` file. Restart Rack when prompted.
+
+**Method B — Drop into the plugins folder manually**
+
+Place the `.vcvplugin` file in the plugins folder for your platform/architecture:
+
+| Platform | Folder |
+|----------|--------|
+| macOS (Apple Silicon) | `~/Library/Application Support/Rack2/plugins-mac-arm64/` |
+| macOS (Intel) | `~/Library/Application Support/Rack2/plugins-mac-x64/` |
+| Windows (x64) | `%LOCALAPPDATA%\Rack2\plugins-win-x64\` |
+| Linux (x64) | `~/.local/share/Rack2/plugins-lin-x64/` |
+
+Restart VCV Rack. Rack unzips the `.vcvplugin` automatically on first launch.
+
+## Build from Source
+
+Requires the [VCV Rack SDK](https://vcvrack.com/manual/Building#Building-Rack-plugins). Set `RACK_DIR` to point at your SDK and run:
+
+```bash
+make dist -j
+```
+
+The packaged plugin is written to `dist/AcidEngine-<version>-<platform>.vcvplugin`.
+
+To cross-compile for Intel macOS from an Apple Silicon host:
+
+```bash
+CROSS_COMPILE=x86_64-apple-darwin make dist -j
+```
+
+### Cross-platform builds
+
+Every push runs [`.github/workflows/build.yml`](.github/workflows/build.yml), which builds `.vcvplugin` artifacts for `mac-arm64`, `mac-x64`, `win-x64`, and `lin-x64`. Pushing a `v*` tag attaches all four artifacts to a GitHub Release automatically.
 
 ## Controls
 
