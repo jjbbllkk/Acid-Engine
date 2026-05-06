@@ -3,7 +3,7 @@
 A TB-303 acid synth emulation for VCV Rack 2.
 
 <p align="center">
-  <img src="res/AcidEngine.svg" alt="Acid Engine panel" width="180">
+  <img src="docs/screenshot.png" alt="Acid Engine module" width="240">
 </p>
 
 ## Overview
